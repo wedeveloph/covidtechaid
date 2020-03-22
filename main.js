@@ -74,7 +74,7 @@ var main = new Vue({
                 
                 temp.how = data.content.$t.split(',')[0].substr(11).trim().toLowerCase();
                 
-                temp.details = (data.content.$t.split(',').slice(1).join(',')).substr(9);
+                temp.details = (data.content.$t.split(',')[1].substr(9));
                 
                 temp.contact = data.content.$t.split(',')[2].substr(14);
                 
@@ -205,7 +205,6 @@ var main = new Vue({
     computed: {
 
         query() {
-
 
             return this.entries.filter(entry => {
                 return entry.institution.toLowerCase().includes(this.search.toLowerCase())
