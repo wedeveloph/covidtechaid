@@ -61,16 +61,39 @@ var main = new Vue({
             
 
                 let temp = {
-                    company: data.title.$t,
-                    role: null,
-                    pay: null,
-                    notes: null
+                    institution: data.title.$t,
+                    how: null,
+                    details: null,
+                    contact: null,
+                    link: null,
+                    tags: []
                 };
-
-
-                temp.pay = data.content.$t.split(',')[0].substr(4).trim().toLowerCase();
-                temp.notes = (data.content.$t.split(',').slice(1).join(',')).substr(8);
-
+                    
+                
+               console.log(data.content.$t.split(','));
+                
+                temp.how = data.content.$t.split(',')[0].substr(11).trim().toLowerCase();
+                
+                temp.details = (data.content.$t.split(',').slice(1).join(',')).substr(9);
+                
+                temp.contact = data.content.$t.split(',')[2].substr(14);
+                
+                temp.link = data.content.$t.split(',')[3].substr(7);
+                
+                for(let i = 4; i < data.content.$t.split(',').length; i++){
+                   
+                   if(i == 4){
+                       temp.tags.push(data.content.$t.split(',')[i].substr(7));
+                   } else{
+                       temp.tags.push(data.content.$t.split(',')[i].substr(1));
+                   }
+                       
+                }
+                
+               // temp.tags = data.content.$t.split(',')[3].substr(14);
+                
+                
+                console.log(temp);
 
                 return temp;
 
@@ -185,7 +208,7 @@ var main = new Vue({
 
 
             return this.entries.filter(entry => {
-                return entry.company.toLowerCase().includes(this.search.toLowerCase())
+                return entry.institution.toLowerCase().includes(this.search.toLowerCase())
             }).filter((row, index) => {
 
                 let start = (this.currentPage - 1) * this.pageSize;

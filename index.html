@@ -97,13 +97,16 @@
                     <thead>
                         <tr>
                             <th v-on:click="sort('company')" class="th-sort">
-                                Company
+                                Group
                             </th>
                             <th v-on:click="sort('pay')" class="th-sort">
-                                Pay?
+                                Details
                             </th>
                             <th>
-                                Notes
+                                Contact
+                            </th>
+                            <th>
+                                Seeking
                             </th>
 
                         </tr>
@@ -112,13 +115,21 @@
                         <tr v-for="entry in query">
 
                             <td class="t-name">
-                                {{ entry.company }}
+                             <a v-bind:href="entry.link"> {{ entry.institution }}</a>
                             </td>
+                            
                             <td class="t-pay" :data-pay="entry.pay">
-                                {{ entry.pay }}
+                                {{ entry.details }}
                             </td>
+                            
                             <td class="t-notes">
-                                {{ entry.notes }}
+                                {{ entry.contact }}
+                            </td>
+                            
+                            <td class="t-seeking">
+  <li v-for="tag in entry.tags">
+    {{ tag }}
+  </li>
                             </td>
                         </tr>
                     </tbody>
