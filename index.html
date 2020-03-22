@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1d1d1d" />
+
+    <title>Covid Tech Aid</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <meta name="title" content="Intern.ph: an internship & compensation database">
+    <meta name="description" content="Find the top Philippine companies that compensate interns through this anonymous database.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://intern.ph">
+    <meta property="og:title" content="Intern.ph: an internship & compensation database">
+    <meta property="og:description" content="Find the top Philippine companies that compensate interns through this anonymous database.">
+    <meta property="og:image" content="https://intern.ph/preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://intern.ph">
+    <meta property="twitter:title" content="Intern.ph: an internship & compensation database">
+    <meta property="twitter:description" content="Find the top Philippine companies that compensate interns through this anonymous database.">
+    <meta property="twitter:image" content="https://intern.ph/preview.jpg">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155308379-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-155308379-2');
+    </script>
+
+
+    <link rel="stylesheet" href="assets/clean.css" type="text/css">
+    <link rel="stylesheet" href="assets/main.css" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+
+<body>
+
+    <div id="container">
+
+
+        <div class="box" id="header">
+            <div class="box-inner">
+
+
+                <header>
+
+                    <h1 class="site-title"><span class="subheading">Covid Tech Aid</span> Volunteer through tech </h1>
+
+                    <p>Essentially: unpaid internships perpetuate inequality and lead to poorer work. The Philippines might still be far from justice on this end, but if you have the agency to choose, we hope this list helps you find some pretty cool companies to work.</p>
+                </header>
+
+                <div class="resource-links">
+                    <a class="link" href="http://bit.ly/payinternsph">Add an internship?</a>
+
+                    <a class="link" href="http://fb.com/groups/developh">Join a students in tech community?</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" id="list">
+
+
+            <div id="internships">
+
+
+                <div class="navigation">
+
+                    <div class="navigation-inner">
+                        <input class="t-search" type="text" v-model="search" placeholder="Search company...">
+
+                        <div class="navigation-buttons">
+                            <button class="btn-prev" @click="prevPage" disabled="true">Previous</button>
+                            <button class="btn-next" @click="nextPage">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="internships-top">
+                    <h2> <span id="count"></span> companies & counting... </h2>
+
+                </div>
+
+                <table class="internship-table" v-if="entries">
+                    <thead>
+                        <tr>
+                            <th v-on:click="sort('company')" class="th-sort">
+                                Company
+                            </th>
+                            <th v-on:click="sort('pay')" class="th-sort">
+                                Pay?
+                            </th>
+                            <th>
+                                Notes
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="entry in query">
+
+                            <td class="t-name">
+                                {{ entry.company }}
+                            </td>
+                            <td class="t-pay" :data-pay="entry.pay">
+                                {{ entry.pay }}
+                            </td>
+                            <td class="t-notes">
+                                {{ entry.notes }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <button class="btn-prev" @click="prevPage" disabled="true">Previous</button>
+                <button class="btn-next" @click="nextPage">Next</button>
+
+
+                <section>
+                    <a href="#">UP ↑</a>
+                </section>
+
+            </div>
+
+
+            <div class="box" id="footer">
+                <footer>
+                    Last updated <span id="last"></span>.
+                    Created for justice by <a href="https://developh.org" target="_blank" rel="noreferrer">Developh</a> in 2020. &hearts;
+                </footer>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js" type="module"></script>
+
+</body></html>
