@@ -1,8 +1,4 @@
-/* iM SORRY */
-
-
-document.getElementById("last").innerHTML = document.lastModified;
-
+/* sorry lol */
 
 var sheet = "https://spreadsheets.google.com/feeds/list/1d7PhqlpzMrUrmxXO_6MEkL1eL61Q898rIsPAptrpaA4/1/public/basic?alt=json";
 
@@ -111,11 +107,8 @@ var main = new Vue({
                     for (let i of res.feed.entry) {
                         test.push(parse(i));
                     }
-
-                    document.getElementById("count").innerHTML = test.length;
-
+                
                     self.entries = test;
-
                     // console.log(test);
 
                 });

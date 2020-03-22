@@ -51,6 +51,20 @@
     <div id="container">
 
 
+                <div class="navigation">
+
+                    <div class="navigation-inner">
+                       
+                        <h1>Tech for Covid</h1>
+                        
+                        <div class="navigation-right">
+                            <a>Link 1</a>
+                            <a>Link 2</a>
+                        </div>
+                        
+                    </div>
+                </div>
+        
         <div class="box" id="header">
             <div class="box-inner">
 
@@ -63,36 +77,16 @@
                 </header>
 
                 <div class="resource-links">
-                    <a class="link" href="http://bit.ly/payinternsph">Add an internship?</a>
-
-                    <a class="link" href="http://fb.com/groups/developh">Join a students in tech community?</a>
+                    
                 </div>
             </div>
         </div>
 
         <div class="box" id="list">
 
-
+            <h2>Help</h2>
+            
             <div id="internships">
-
-
-                <div class="navigation">
-
-                    <div class="navigation-inner">
-                        <input class="t-search" type="text" v-model="search" placeholder="Search company...">
-
-                        <div class="navigation-buttons">
-                            <button class="btn-prev" @click="prevPage" disabled="true">Previous</button>
-                            <button class="btn-next" @click="nextPage">Next</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="internships-top">
-                    <h2> <span id="count"></span> companies & counting... </h2>
-
-                </div>
-
                 <table class="internship-table" v-if="entries">
                     <thead>
                         <tr>
@@ -118,7 +112,7 @@
                              <a v-bind:href="entry.link"> {{ entry.institution }}</a>
                             </td>
                             
-                            <td class="t-pay" :data-pay="entry.pay">
+                            <td class="t-details" :data-details="entry.details">
                                 {{ entry.details }}
                             </td>
                             
@@ -127,9 +121,9 @@
                             </td>
                             
                             <td class="t-seeking">
-  <li v-for="tag in entry.tags">
-    {{ tag }}
-  </li>
+                          <li v-for="tag in entry.tags">
+                            {{ tag }}
+                          </li>
                             </td>
                         </tr>
                     </tbody>
@@ -144,6 +138,14 @@
                     <a href="#">UP ↑</a>
                 </section>
 
+            </div>
+            
+            <hr>
+            
+            <div id="resources">
+            
+                <h2>Other resources</h2>
+                
             </div>
 
 

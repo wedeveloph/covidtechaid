@@ -89,6 +89,7 @@ a.link:hover {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 4em;
 }
 
 #internships button {
@@ -106,11 +107,6 @@ a.link:hover {
 
 #internships a:hover {
     text-shadow: 0 0 20px #fff;
-}
-
-.internships-top {
-    width: 100%;
-    justify-content: space-around;
 }
 
 #internships h2 {
@@ -170,11 +166,10 @@ td.t-name {
     max-width: 190px;
 }
 
-td.t-pay {
+td.t-details {
     line-height: 1.3em;
-    width: 15%;
+    width: 25%;
     font-size: .8em;
-    text-transform: capitalize;
 }
 
 
@@ -183,30 +178,36 @@ td.t-notes {
     line-height: 1.3em;
 }
 
-
-td.t-pay[data-pay="salary"]::after {
-    content: " 💸";
+td.t-seeking{
+    
 }
 
-
-td.t-pay[data-pay="stipend only"]::after {
-    content: " 🚌";
+td.t-seeking li{
+    font-size:.8em;
 }
-
 
 /* NAVIGATIOn */
 
 .navigation {
     position: fixed;
     top: 0;
+    left:0;
     height: 80px;
     width: 100%;
-    padding: 1em;
+    margin-top:1em;
+    padding: 1.5em;
     background-size: contain;
-    background-image: url(nav.png);
-    background-repeat: repeat-x;
-    justify-content: center;
     display: flex;
+    mix-blend-mode: difference;
+}
+
+
+.navigation h1{
+    float:left;
+}
+
+.navigation .navigation-right{
+    float:right;
 }
 
 .navigation-inner {
@@ -262,11 +263,6 @@ footer a:hover {
 
 
 @media screen and (max-width: 800px) {
-
-    .internships-top {
-        margin: .8em;
-
-    }
 
     #internships h2 {
         float: left;
