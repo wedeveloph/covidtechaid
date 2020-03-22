@@ -1,14 +1,4 @@
-@import url('https://rsms.me/inter/inter.css');
 
-html {
-    font-family: 'Inter', sans-serif;
-}
-
-@supports (font-variation-settings: normal) {
-    html {
-        font-family: 'Inter var', sans-serif;
-    }
-}
 
 :root {
 
@@ -37,7 +27,7 @@ html {
 
 
 body {
-    font-family: "Inter", "Helvetica", system-ui, -apple-system, BlinkMacSystemFont;
+    font-family: "Brown", "Helvetica", system-ui, -apple-system, BlinkMacSystemFont;
     background: var(--bg-color);
     color: var(--text-color);
     text-rendering: optimizeLegibility;

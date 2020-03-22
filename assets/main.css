@@ -296,3 +296,42 @@ footer a:hover {
 
 
 }
+
+
+
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Brown Bold Itali';
+    src: url('Brown-BoldItali.woff2') format('woff2'),
+        url('Brown-BoldItali.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Brown';
+    src: url('Brown-Bold.woff2') format('woff2'),
+        url('Brown-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brown';
+    src: url('Brown-Regular.woff2') format('woff2'),
+        url('Brown-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brown Itali';
+    src: url('Brown-Itali.woff2') format('woff2'),
+        url('Brown-Itali.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
